@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+def vn = "1.0.2"
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
@@ -11,7 +12,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 3
-        versionName "1.0.2"
+        versionName "${vn}"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -44,7 +45,33 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    dexOptions {
+        preDexLibraries false
+        maxProcessCount 8
+        javaMaxHeapSize "4g"
+    }
+    aaptOptions {
+        cruncherEnabled = false
+        useNewCruncher = false
+    }
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+        warningsAsErrors false
+        disable "UnusedResources"
+        textOutput "stdout"
+        textReport false
+        disable 'RestrictedApi'
+    }
+}
 
+tasks.withType(Javadoc) {
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
 }
 
 dependencies {
@@ -68,7 +95,7 @@ dependencies {
     implementation 'com.wuhenzhizao:titlebar:1.2.0'
     implementation  'com.scwang.smart:refresh-layout-kernel:2.0.1'
     implementation  'com.scwang.smart:refresh-header-classics:2.0.1'
-    implementation  'com.scwang.smart:refresh-footer-classics:2.0.1'   
+    implementation 'com.scwang.smart:refresh-footer-classics:2.0.1'
 
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
     implementation 'org.jsoup:jsoup:1.13.1'
@@ -80,16 +107,43 @@ dependencies {
     implementation 'com.tencent.bugly:nativecrashreport:3.7.1'
 }
 
-android.applicationVariants.all { variant ->
+//android.applicationVariants.all { variant ->
+//
+//    variant.getPackageApplication().outputScope.apkDatas.forEach { apkData ->
+//
+//        def outputFile = apkData.outputFileName
+//        if (outputFile != null && outputFile.endsWith('.apk')) {
+//            //这里修改apk文件名
+//            def fileName = outputFile.replace("app-release", "ZY-Player-Android").replace(".apk", "-${versionName}" + ".apk")
+//            apkData.outputFileName = fileName
+//        }
+//
+//    }
+//}
 
-    variant.getPackageApplication().outputScope.apkDatas.forEach { apkData ->
-
-        def outputFile = apkData.outputFileName
-        if (outputFile != null && outputFile.endsWith('.apk')) {
-            //这里修改apk文件名
-            def fileName = outputFile.replace("app-release", "ZY-Player-Android").replace(".apk", "-${versionName}" + ".apk")
-            apkData.outputFileName = fileName
+assemble.doLast {
+    android.applicationVariants.all { variant ->
+        if (variant.name == "release") {
+            variant.outputs.each { output ->
+                File originFile = output.outputFile
+                println originFile.absolutePath
+                copy {
+                    from originFile
+                    into "$rootDir/release"
+                    rename(originFile.name, "ZY-Player-Release-${vn}.apk")
+                }
+            }
         }
-
+//        if (variant.name == "debug") {
+//            variant.outputs.each { output ->
+//                File originFile = output.outputFile
+//                println originFile.absolutePath
+//                copy {
+//                    from originFile
+//                    into "$rootDir/release"
+//                    rename(originFile.name, "ZY-Player-Debug-${vn}.apk")
+//                }
+//            }
+//        }
     }
 }

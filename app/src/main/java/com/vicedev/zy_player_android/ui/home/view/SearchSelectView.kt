@@ -12,7 +12,6 @@ import kotlinx.android.synthetic.main.search_select_view.view.*
  * @author vicedev1001@gmail.com
  * @date 2020/6/8 22:10
  */
-
 class SearchSelectView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
