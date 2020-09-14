@@ -37,12 +37,12 @@ class App : Application() {
 //        每一条Crash都会被立即上报；
 //        自定义日志将会在Logcat中输出。
 //        建议在测试阶段建议设置成true，发布时设置为false。
-        if (!BuildConfig.DEBUG) {
+//        if (!BuildConfig.DEBUG) {
             Bugly.init(
                 appContext,
-                "21826c98fb",
-                true
+                BuildConfig.BUGLY_KEY,
+                BuildConfig.FLAG_DEBUG
             )
-        }
+//        }
     }
 }

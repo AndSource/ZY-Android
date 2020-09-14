@@ -15,6 +15,10 @@ android {
         versionName "${vn}"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "boolean", "FLAG_DEBUG", "true"
+        buildConfigField "String", "BUGLY_KEY", "\"21826c98fb\""
+
     }
 
     signingConfigs {
