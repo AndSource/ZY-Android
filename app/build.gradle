@@ -64,27 +64,18 @@ dependencies {
 //    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     implementation 'com.shuyu:GSYVideoPlayer:7.1.4'
-
     implementation 'com.github.arcadefire:nice-spinner:1.4.4'
-
     implementation 'com.wuhenzhizao:titlebar:1.2.0'
-
     implementation  'com.scwang.smart:refresh-layout-kernel:2.0.1'
     implementation  'com.scwang.smart:refresh-header-classics:2.0.1'
     implementation  'com.scwang.smart:refresh-footer-classics:2.0.1'   
 
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
-
     implementation 'org.jsoup:jsoup:1.13.1'
-
     implementation 'com.google.code.gson:gson:2.8.6'
-
     implementation 'com.blankj:utilcodex:1.29.0'
-
     implementation 'com.lzy.net:okgo:3.0.4'
-
     implementation 'com.lxj:xpopup:1.8.12'
-
     implementation 'com.tencent.bugly:crashreport_upgrade:1.4.5'
     implementation 'com.tencent.bugly:nativecrashreport:3.7.1'
 }

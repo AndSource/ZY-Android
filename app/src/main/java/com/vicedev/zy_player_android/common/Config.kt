@@ -33,7 +33,7 @@ data class Children(
 
 object ConfigManager {
     val config: Config by lazy {
-        GsonUtils.fromJson(ResourceUtils.readAssets2String("config.txt"), Config::class.java)
+        GsonUtils.fromJson(ResourceUtils.readAssets2String("config.json"), Config::class.java)
     }
     val configMap: HashMap<String, ConfigItem> by lazy {
         val hashMap = hashMapOf<String, ConfigItem>()
