@@ -6,7 +6,6 @@
 ## 下载地址
 
 - [fir.im下载地址](http://d.firim.vip/ubsk)
-- [github下载](https://github.com/vicedev/ZY-Player-Android/raw/master/release/ZY-Player-Android-1.0.1.apk)
 - [百度网盘下载](https://pan.baidu.com/s/1fV1rO-WAcqbf0NBIgm1NsA)，提取码: py2s
 
 
