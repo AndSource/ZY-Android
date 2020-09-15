@@ -1,8 +1,7 @@
 ## ZY Player Android 资源播放器
 
-基于[ZY-Player](https://github.com/Hunlongyu/ZY-Player)开发的Android版本视频播放器，免费无广告
+基于[ZY-Player](https://github.com/Hunlongyu/ZY-Player)开发的Android版本视频播放器。
 
-### 公告：这段时间工作太忙一直没更新，近期将会重新开始下一个版本的开发。
 
 ### 下載
 
@@ -10,24 +9,19 @@
 - [github下载](https://github.com/vicedev/ZY-Player-Android/raw/master/release/ZY-Player-Android-1.0.1.apk)
 - [百度网盘下载](https://pan.baidu.com/s/1fV1rO-WAcqbf0NBIgm1NsA)，提取码: py2s
 
-### 截图
 
-|           首页（搜索）            |              详情页               |
-| :-------------------------------: | :-------------------------------: |
-| ![home](./images/image1.jpg)  | ![detail](./images/image2.jpg) |
-| 下载 |  |
-| ![home](./images/image3.jpg) |  |
 
 ### TODO 
 
-- 视频下载（应用内）
-- 视频收藏
-- 详情页展示优化
-- 美化界面
-- 视频分享
-- 多主题
-- 多语言
-- 投屏
+ 原作者没时间维护迭代，抽空优化功能版本，招募开发者一起迭代，需求可以自己认领，在”**Projects**“中
+ 
+ - [ ]  应用内视频下载
+ - [ ] 收藏、历史功能
+ - [ ] 详情页展示优化
+ - [ ] 投屏
+ - [ ] 美化界面
+ - [ ] 全屏优化
+ - [ ] 电视兼容
 
 ### 版本记录
 
